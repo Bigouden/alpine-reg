@@ -8,7 +8,6 @@ variables:
 .standalone:
   image:
     name: $CONTAINER_TEST_IMAGE
-    entrypoint: []
   dependencies: []
   variables:
     GIT_STRATEGY: none
