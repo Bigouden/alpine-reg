@@ -2,6 +2,7 @@ FROM alpine:3.13
 LABEL maintainer="Thomas GUIRRIEC <thomas@guirriec.fr>"
 ARG REG_VERSION="v0.16.1"
 ARG REG_SHA256="ade837fc5224acd8c34732bf54a94f579b47851cc6a7fd5899a98386b782e228"
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN apk add --no-cache --update --virtual \
       build-dependencies \
         curl \
