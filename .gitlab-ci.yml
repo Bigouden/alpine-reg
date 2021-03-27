@@ -24,4 +24,4 @@ Reg:
   stage: Test
   extends: .standalone
   script:
-    - reg --version
+    - reg version
