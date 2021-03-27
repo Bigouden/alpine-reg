@@ -1,0 +1,27 @@
+include:
+  - project: 'Bigouden/gitlab-ci-templates'
+    file: '.gitlab-ci-docker.yml'
+
+variables:
+  FF_NETWORK_PER_BUILD: "true"
+  
+.standalone:
+  image:
+    name: $CONTAINER_TEST_IMAGE
+    entrypoint: [""]
+  dependencies: []
+  variables:
+    GIT_STRATEGY: none
+
+stages:
+  - Quality
+  - Build
+  - Test
+  - Inspect
+  - Release
+
+Reg:
+  stage: Test
+  extends: .standalone
+  script:
+    - reg version
